@@ -1,0 +1,38 @@
+<form  action="thanks.php"  method="post">
+    <div>
+        <label  for="nom">Nom :</label>
+        <input  type="text"  id="nom"  name="user_last_name">
+    </div>
+    <div>
+        <label  for="prenom">Prénom :</label>
+        <input  type="text"  id="prenom"  name="user_first_name">
+    </div>
+    <div>
+        <label  for="e_mail">E-mail :</label>
+        <input  type="email"  id="e_mail"  name="user_email">
+    </div>
+    <div>
+        <label  for="phone_number">Téléphone :</label>
+        <input  type="number"  id="phone_number"  name="user_phonenumber">
+    </div>
+    <div>
+        <label  for="subject">Sujet :</label>
+        <select name="subject" size="1">
+            <option>Ton inscription</option>
+            <option>Ta démission</option>
+            <option>Ton entretien</option>
+        </select>
+    </div>
+    <div>
+        <label  for="message">Message :</label>
+        <textarea  id="message"  name="user_message"></textarea>
+    </div>
+    <div  class="button">
+        <input  type="submit">Envoyer votre message</input>
+    </div>
+</form>
+
+-----------------------------------------
+<?php
+echo 'Merci ' . $_POST['user_first_name'] . '  ' . $_POST['user_last_name'] . 'de nous avoir contacté à propos de ' . $_POST['subject'] . '. ' . 'Un de nos conseiller vous contactera soit à l’adresse ' . $_POST['user_email'] . 'ou par téléphone au ' . $_POST['user_phonenumber'] . 'dans les plus brefs délais pour traiter votre demande : ' .$_POST['user_message'];
+?>
